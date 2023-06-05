@@ -1,10 +1,17 @@
 /* Font import */
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500&display=swap');
+@font-face {
+    font-family: 'Ubuntu';
+    src: url('../fonts/ubuntu-regular.woff2') format('woff2'),
+        url('../fonts/ubuntu-regular.woff') format('woff');
+}
 
 /* Whole body */
 body {
-    padding-top: 4.5rem;
+    padding-top: 5.3rem;
     font-family: 'Ubuntu', sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
 }
 
 /* Sections general */
@@ -18,7 +25,7 @@ section {
 
 /* About section */
 #about .social-links a {
-    font-size: 25px;
+    font-size: 28px;
     margin-right: 5px;
 }
 
