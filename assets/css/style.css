@@ -7,7 +7,6 @@
 
 /* Whole body */
 body {
-    padding-top: 5.3rem;
     font-family: 'Ubuntu', sans-serif;
 }
 h1, h2, h3, h4, h5, h6 {
@@ -27,18 +26,29 @@ section {
 #about .social-links a {
     font-size: 28px;
     margin-right: 5px;
+    color: #ffffff;
 }
 
 /* Skills section */
 #skills .card img {
     width: 2rem;
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+    transition: all 0.3s ease-in;
+    -webkit-transition: all 0.3s ease-in;
+    -moz-transition: all 0.3s ease-in;
+    -o-transition: all 0.3s ease-in;
+}
+#skills .card img:hover {
+    filter: none;
+    -webkit-filter: none;
 }
 
 /* Resume section */
 #resume .resume-item {
     padding: 0 0 20px 20px;
     margin-top: -2px;
-    border-left: 2px dashed #0d6efd;
+    border-left: 2px dashed #212529;
     position: relative;
 }
 #resume .resume-item::before {
@@ -50,7 +60,7 @@ section {
     left: -9px;
     top: 0;
     background: #ffffff;
-    border: 2px solid #0d6efd;
+    border: 2px solid #212529;
 }
 #resume .resume-item:last-child {
     padding-bottom: 0;
@@ -58,6 +68,34 @@ section {
 #resume .resume-item h5 {
     line-height: 18px;
     margin-bottom: 10px;
+}
+
+/* Certifications section */
+#certifications .carousel img {
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+    transition: all 0.3s ease-in;
+    -webkit-transition: all 0.3s ease-in;
+    -moz-transition: all 0.3s ease-in;
+    -o-transition: all 0.3s ease-in;
+}
+#certifications .carousel img:hover {
+    filter: none;
+    -webkit-filter: none;
+}
+
+/* Portfolio section */
+#portfolio .card img {
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+    transition: all 0.25s ease;
+    -webkit-transition: all 0.25s ease;
+    -moz-transition: all 0.25s ease;
+    -o-transition: all 0.25s ease;
+}
+#portfolio .card img:hover {
+    filter: none;
+    -webkit-filter: none;
 }
 
 /* Contact section */
@@ -80,7 +118,7 @@ section {
     width: 44px;
     border-radius: 50px;
     margin-right: 20px;
-    background: #0d6efd;
+    background: #212529;
     color: #ffffff;
 }
 #contact .card .phone i {
@@ -93,7 +131,7 @@ section {
     width: 44px;
     border-radius: 50px;
     margin-right: 20px;
-    background: #0d6efd;
+    background: #212529;
     color: #ffffff;
 }
 #contact .card .email i {
@@ -106,6 +144,9 @@ section {
     width: 44px;
     border-radius: 50px;
     margin-right: 20px;
-    background: #0d6efd;
+    background: #212529;
     color: #ffffff;
+}
+#contact .form-control:focus {
+    border-color: #212529;
 }

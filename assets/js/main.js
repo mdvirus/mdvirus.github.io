@@ -1,46 +1,5 @@
 (function() {
     "use strict";
-
-    /* Theme selector */
-    const getPreferredTheme = () => {
-        const storedTheme = localStorage.getItem('prefferedtheme')
-        if (storedTheme) {
-            return storedTheme
-        }
-        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
-    }
-
-    const toggler = document.getElementById('theme-toggler')
-    const togglerButton = toggler.children[0]
-    const togglerOptionLight = toggler.children[1].children[0]
-    const togglerOptionDark = toggler.children[1].children[1]
-
-    const setTheme = function (theme) {
-        if (theme === 'dark') {
-            document.documentElement.setAttribute('data-bs-theme', 'dark')
-            togglerButton.children[0].classList.remove('fa-sun')
-            togglerButton.children[0].classList.add('fa-moon')
-            togglerOptionLight.children[0].classList.remove('active')
-            togglerOptionDark.children[0].classList.add('active')
-        } else if (theme === 'light') {
-            document.documentElement.setAttribute('data-bs-theme', 'light')
-            togglerButton.children[0].classList.remove('fa-moon')
-            togglerButton.children[0].classList.add('fa-sun')
-            togglerOptionDark.children[0].classList.remove('active')
-            togglerOptionLight.children[0].classList.add('active')
-        }
-    }
-    
-    setTheme(getPreferredTheme())
-    
-    togglerOptionLight.addEventListener('click', function(){
-        setTheme('light')
-        localStorage.setItem('prefferedtheme', 'light')
-    })
-    togglerOptionDark.addEventListener('click', function(){
-        setTheme('dark')
-        localStorage.setItem('prefferedtheme', 'dark')
-    })
     
     /* Easy selector helper function */
     const select = (el, all = false) => {
@@ -63,29 +22,6 @@
             }
         }
     }
-
-    /* Easy on scroll event listener */
-    const onscroll = (el, listener) => {
-        el.addEventListener('scroll', listener)
-    }
-
-    /* Navbar links active state on scroll */
-    let navbarlinks = select('#navbar .scrollto', true)
-    const navbarlinksActive = () => {
-        let position = window.scrollY + 200
-        navbarlinks.forEach(navbarlink => {
-            if (!navbarlink.hash) return
-            let section = select(navbarlink.hash)
-            if (!section) return
-            if (position >= section.offsetTop && position <= (section.offsetTop + section.offsetHeight)) {
-                navbarlink.classList.add('active')
-            } else {
-                navbarlink.classList.remove('active')
-            }
-        })
-    }
-    window.addEventListener('load', navbarlinksActive)
-    onscroll(document, navbarlinksActive)
 
     /* Scrolls to an element with header offset */
     const scrollto = (el) => {
