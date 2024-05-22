@@ -1,13 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap'); /* Font import */
+
 /* Root variables */
 :root {
     --c-white: #fff;
     --c-black: #212529;
-}
-
-/* Font import */
-@font-face {
-    font-family: 'Ubuntu';
-    src: url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
 }
 
 /* Whole body */
